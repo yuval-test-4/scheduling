@@ -54,3 +54,8 @@ module "ecs_alb_scheduling" {
     },
   ]
 }
+
+output "dns_name_load_balancer" {
+  description = "DNS name under which the service is exposed"
+  value       = module.ecs_alb_scheduling.lb_dns_name
+}
