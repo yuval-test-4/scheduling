@@ -50,18 +50,6 @@ public abstract class MeetingsControllerBase : ControllerBase
     }
 
     /// <summary>
-    /// Find many meetings
-    /// </summary>
-    [HttpGet()]
-    [Authorize(Roles = "user")]
-    public async Task<ActionResult<List<Meeting>>> Meetings(
-        [FromQuery()] MeetingFindManyArgs filter
-    )
-    {
-        return Ok(await _service.Meetings(filter));
-    }
-
-    /// <summary>
     /// Meta data about meeting records
     /// </summary>
     [HttpPost("meta")]
